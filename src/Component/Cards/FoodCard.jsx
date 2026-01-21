@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import CartButton from "../Buttons/CartButton";
 
 const FoodCard = ({ food }) => {
   const { id, title, foodImg, price, category } = food || {};
@@ -19,8 +20,8 @@ const FoodCard = ({ food }) => {
 
         <p className="text-lg font-semibold">৳ {price}</p>
 
-        <div className="card-actions mt-3 justify-between">
-          <button className="btn btn-primary btn-sm">Add to Cart</button>
+        <div className="card-actions mt-3 items-center justify-between">
+          <CartButton food={food} />
 
           <Link href={`/foods/${id}`}>
             <button className="btn btn-outline btn-sm">View Details</button>

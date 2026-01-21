@@ -1,6 +1,7 @@
 import FoodCard from "@/Component/Cards/FoodCard";
 import SearchFoods from "@/Component/SearchFoods";
 import React from "react";
+import CartItems from "./CartItems";
 
 const getFoods = async (search) => {
   const res = await fetch(
@@ -25,14 +26,18 @@ const Foods = async ({ searchParams }) => {
         <SearchFoods />
       </div>
 
-      <div className="">
-        <div className="my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-3">
+        <div className="lg:col-span-9 my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {foods.map((food) => (
             <FoodCard key={food.id} food={food} />
           ))}
         </div>
 
-        <div className=""></div>
+        <div className="lg:col-span-3 px-3 pt-1 bg-base-100 border border-gray-400 rounded shadow-2xl">
+          <>
+            <CartItems />
+          </>
+        </div>
       </div>
     </section>
   );
