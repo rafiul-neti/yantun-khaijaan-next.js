@@ -22,7 +22,7 @@ const FoodCard = ({ food }) => {
         <div className="card-actions mt-3 justify-between">
           <button className="btn btn-primary btn-sm">Add to Cart</button>
 
-          <Link href={`/food/${id}`}>
+          <Link href={`/foods/${id}`}>
             <button className="btn btn-outline btn-sm">View Details</button>
           </Link>
         </div>
