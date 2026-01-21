@@ -10,20 +10,20 @@ import NavLink from "./NavLink";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const navs = ["home", "foods", "reviews"];
   const links = (
     <>
-      <li>
-        <NavLink href={"/"}>Home</NavLink>
-      </li>
-      <li>
-        <NavLink href={"/"}>About</NavLink>
-      </li>
-      <li>
-        <NavLink href={"/"}>Service</NavLink>
-      </li>
-      <li>
-        <NavLink href={"/"}>Contact</NavLink>
-      </li>
+      {navs.map((nav, i) => (
+        <li key={i}>
+          <NavLink
+            href={nav === "home" ? `/` : `/${nav}`}
+            className={`uppercase text-[13px] font-bold`}
+          >
+            {nav}
+          </NavLink>
+        </li>
+      ))}
     </>
   );
 
