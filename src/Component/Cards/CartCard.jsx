@@ -31,7 +31,7 @@ const CartCard = ({ item }) => {
         {/* Part 3: Delete Button */}
         <button
           onClick={() => handleDeleteFromCart(item.id)}
-          className="btn btn-sm text-red-500"
+          className="btn btn-sm bg-transparent border-transparent text-red-500 shadow-none"
           aria-label="Remove item"
         >
           <MdDelete size={22} />

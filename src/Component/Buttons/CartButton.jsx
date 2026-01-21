@@ -3,11 +3,10 @@ import { CartContext } from "@/app/Contexts/CreatedContexts/CartContext";
 import React, { use, useState } from "react";
 
 const CartButton = ({ food }) => {
-  const { addToCart } = use(CartContext);
-  const [inCart, setInCart] = useState(false);
+  const { cart, addToCart } = use(CartContext);
+  const inCart = cart.some((item) => item.id === food.id);
   const handleAddToCart = () => {
     addToCart(food);
-    setInCart(true);
   };
   return (
     <button
